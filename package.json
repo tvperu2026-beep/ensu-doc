@@ -1,0 +1,29 @@
+{
+  "name": "ensu-doc",
+  "productName": "ENSU Doc",
+  "version": "2.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "pe.ensu.doc",
+    "productName": "ENSU Doc",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "index.html"],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
